@@ -600,6 +600,11 @@ namespace System.Collections
             CopyEntries(array, arrayIndex);
         }
 
+        public static void PNSE()
+        {
+            throw new PlatformNotSupportedException();
+        }
+
         // Copies the values in this Hashtable to an KeyValuePairs array.
         // KeyValuePairs is different from Dictionary Entry in that it has special
         // debugger attributes on its fields.
