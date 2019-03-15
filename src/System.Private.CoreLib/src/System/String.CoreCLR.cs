@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 
+#nullable enable
 namespace System
 {
     public partial class String

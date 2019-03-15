@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Internal.Runtime.CompilerServices;
 
+#nullable enable
 namespace System
 {
     public partial class String
@@ -255,7 +256,7 @@ namespace System
             }
         }
 
-        public static string Concat(string str0, string str1)
+        public static string Concat(string? str0, string? str1)
         {
             if (IsNullOrEmpty(str0))
             {
@@ -281,7 +282,7 @@ namespace System
             return result;
         }
 
-        public static string Concat(string str0, string str1, string str2)
+        public static string Concat(string? str0, string? str1, string? str2)
         {
             if (IsNullOrEmpty(str0))
             {
@@ -308,7 +309,7 @@ namespace System
             return result;
         }
 
-        public static string Concat(string str0, string str1, string str2, string str3)
+        public static string Concat(string? str0, string? str1, string? str2, string? str3)
         {
             if (IsNullOrEmpty(str0))
             {

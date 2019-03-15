@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using Internal.Runtime.CompilerServices;
 
+#nullable enable
 namespace System
 {
     public partial class String

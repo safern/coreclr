@@ -16,6 +16,7 @@ using nuint = System.UInt64;
 using nuint = System.UInt32;
 #endif
 
+#nullable enable
 namespace System
 {
     public partial class String
@@ -636,13 +637,13 @@ namespace System
 
         public bool Equals(string? value, StringComparison comparisonType)
         {
-            if ((object)this == (object)value)
+            if ((object)this == (object?)value)
             {
                 CheckStringComparison(comparisonType);
                 return true;
             }
 
-            if ((object)value == null)
+            if ((object?)value == null)
             {
                 CheckStringComparison(comparisonType);
                 return false;
