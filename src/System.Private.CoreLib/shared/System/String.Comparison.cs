@@ -16,6 +16,7 @@ using nuint = System.UInt64;
 using nuint = System.UInt32;
 #endif
 
+#nullable enable
 namespace System
 {
     public partial class String

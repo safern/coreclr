@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Internal.Runtime.CompilerServices;
 
+#nullable enable
 namespace System
 {
     public partial class String

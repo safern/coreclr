@@ -13,6 +13,7 @@ using System.Runtime.Versioning;
 using System.Text;
 using Internal.Runtime.CompilerServices;
 
+#nullable enable
 namespace System
 {
     // The String class represents a static string of characters.  Many of
