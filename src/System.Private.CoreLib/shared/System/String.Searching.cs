@@ -22,7 +22,7 @@ namespace System
                 value.Length) >= 0;
         }
 
-        public bool Contains(string value, StringComparison comparisonType)
+        public bool Contains(string? value, StringComparison comparisonType)
         {
             return (IndexOf(value, comparisonType) >= 0);
         }
@@ -121,7 +121,7 @@ namespace System
             }
         }
 
-        private unsafe int IndexOfCharArray(char[] anyOf, int startIndex, int count)
+        private unsafe int IndexOfCharArray(char[]? anyOf, int startIndex, int count)
         {
             // use probabilistic map, see InitializeProbabilisticMap
             ProbabilisticMap map = default;
@@ -198,7 +198,7 @@ namespace System
             }
         }
 
-        private static bool ArrayContains(char searchChar, char[] anyOf)
+        private static bool ArrayContains(char searchChar, char[]? anyOf)
         {
             for (int i = 0; i < anyOf.Length; i++)
             {
@@ -371,7 +371,7 @@ namespace System
             }
         }
 
-        private unsafe int LastIndexOfCharArray(char[] anyOf, int startIndex, int count)
+        private unsafe int LastIndexOfCharArray(char[]? anyOf, int startIndex, int count)
         {
             // use probabilistic map, see InitializeProbabilisticMap
             ProbabilisticMap map = default;

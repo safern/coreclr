@@ -100,7 +100,7 @@ namespace System
         }
 
         // Copies the source String (byte buffer) to the destination IntPtr memory allocated with len bytes.
-        internal static unsafe void InternalCopy(string src, IntPtr dest, int len)
+        internal static unsafe void InternalCopy(string? src, IntPtr dest, int len)
         {
             if (len == 0)
                 return;
@@ -112,7 +112,7 @@ namespace System
             }
         }
 
-        internal unsafe int GetBytesFromEncoding(byte* pbNativeBuffer, int cbNativeBuffer, Encoding encoding)
+        internal unsafe int GetBytesFromEncoding(byte* pbNativeBuffer, int cbNativeBuffer, Encoding? encoding)
         {
             // encoding == Encoding.UTF8
             fixed (char* pwzChar = &_firstChar)

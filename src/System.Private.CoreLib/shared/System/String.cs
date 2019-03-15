@@ -37,7 +37,7 @@ namespace System
 #if !CORECLR
         static
 #endif
-        private string Ctor(char[] value)
+        private string Ctor(char[]? value)
         {
             if (value == null || value.Length == 0)
                 return Empty;
@@ -240,7 +240,7 @@ namespace System
 #if !CORECLR
         static
 #endif
-        private unsafe string Ctor(sbyte* value, int startIndex, int length, Encoding enc)
+        private unsafe string Ctor(sbyte* value, int startIndex, int length, Encoding? enc)
         {
             if (enc == null)
                 return new string(value, startIndex, length);
@@ -433,7 +433,7 @@ namespace System
         }
 
         [NonVersionable]
-        public static bool IsNullOrEmpty(string value)
+        public static bool IsNullOrEmpty(string? value)
         {
             // Using 0u >= (uint)value.Length rather than
             // value.Length == 0 as it will elide the bounds check to
@@ -457,7 +457,7 @@ namespace System
         [System.Runtime.CompilerServices.IndexerName("Chars")]
         public string this[Range range] => Substring(range);
 
-        public static bool IsNullOrWhiteSpace(string value)
+        public static bool IsNullOrWhiteSpace(string? value)
         {
             if (value == null) return true;
 
@@ -474,7 +474,7 @@ namespace System
         // Helper for encodings so they can talk to our buffer directly
         // stringLength must be the exact size we'll expect
         internal static unsafe string CreateStringFromEncoding(
-            byte* bytes, int byteLength, Encoding encoding)
+            byte* bytes, int byteLength, Encoding? encoding)
         {
             Debug.Assert(bytes != null);
             Debug.Assert(byteLength >= 0);
@@ -530,7 +530,7 @@ namespace System
         }
 
         // Returns this string.
-        public string ToString(IFormatProvider provider)
+        public string ToString(IFormatProvider? provider)
         {
             return this;
         }
@@ -692,77 +692,77 @@ namespace System
             return TypeCode.String;
         }
 
-        bool IConvertible.ToBoolean(IFormatProvider provider)
+        bool IConvertible.ToBoolean(IFormatProvider? provider)
         {
             return Convert.ToBoolean(this, provider);
         }
 
-        char IConvertible.ToChar(IFormatProvider provider)
+        char IConvertible.ToChar(IFormatProvider? provider)
         {
             return Convert.ToChar(this, provider);
         }
 
-        sbyte IConvertible.ToSByte(IFormatProvider provider)
+        sbyte IConvertible.ToSByte(IFormatProvider? provider)
         {
             return Convert.ToSByte(this, provider);
         }
 
-        byte IConvertible.ToByte(IFormatProvider provider)
+        byte IConvertible.ToByte(IFormatProvider? provider)
         {
             return Convert.ToByte(this, provider);
         }
 
-        short IConvertible.ToInt16(IFormatProvider provider)
+        short IConvertible.ToInt16(IFormatProvider? provider)
         {
             return Convert.ToInt16(this, provider);
         }
 
-        ushort IConvertible.ToUInt16(IFormatProvider provider)
+        ushort IConvertible.ToUInt16(IFormatProvider? provider)
         {
             return Convert.ToUInt16(this, provider);
         }
 
-        int IConvertible.ToInt32(IFormatProvider provider)
+        int IConvertible.ToInt32(IFormatProvider? provider)
         {
             return Convert.ToInt32(this, provider);
         }
 
-        uint IConvertible.ToUInt32(IFormatProvider provider)
+        uint IConvertible.ToUInt32(IFormatProvider? provider)
         {
             return Convert.ToUInt32(this, provider);
         }
 
-        long IConvertible.ToInt64(IFormatProvider provider)
+        long IConvertible.ToInt64(IFormatProvider? provider)
         {
             return Convert.ToInt64(this, provider);
         }
 
-        ulong IConvertible.ToUInt64(IFormatProvider provider)
+        ulong IConvertible.ToUInt64(IFormatProvider? provider)
         {
             return Convert.ToUInt64(this, provider);
         }
 
-        float IConvertible.ToSingle(IFormatProvider provider)
+        float IConvertible.ToSingle(IFormatProvider? provider)
         {
             return Convert.ToSingle(this, provider);
         }
 
-        double IConvertible.ToDouble(IFormatProvider provider)
+        double IConvertible.ToDouble(IFormatProvider? provider)
         {
             return Convert.ToDouble(this, provider);
         }
 
-        decimal IConvertible.ToDecimal(IFormatProvider provider)
+        decimal IConvertible.ToDecimal(IFormatProvider? provider)
         {
             return Convert.ToDecimal(this, provider);
         }
 
-        DateTime IConvertible.ToDateTime(IFormatProvider provider)
+        DateTime IConvertible.ToDateTime(IFormatProvider? provider)
         {
             return Convert.ToDateTime(this, provider);
         }
 
-        object IConvertible.ToType(Type type, IFormatProvider provider)
+        object IConvertible.ToType(Type? type, IFormatProvider? provider)
         {
             return Convert.DefaultToType((IConvertible)this, type, provider);
         }

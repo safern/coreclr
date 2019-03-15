@@ -33,7 +33,7 @@ namespace System
             }
         }
 
-        public static string Concat(object arg0)
+        public static string Concat(object? arg0)
         {
             if (arg0 == null)
             {
@@ -42,7 +42,7 @@ namespace System
             return arg0.ToString();
         }
 
-        public static string Concat(object arg0, object arg1)
+        public static string Concat(object? arg0, object? arg1)
         {
             if (arg0 == null)
             {
@@ -56,7 +56,7 @@ namespace System
             return Concat(arg0.ToString(), arg1.ToString());
         }
 
-        public static string Concat(object arg0, object arg1, object arg2)
+        public static string Concat(object? arg0, object? arg1, object? arg2)
         {
             if (arg0 == null)
             {
@@ -473,17 +473,17 @@ namespace System
             return copiedLength == totalLength ? result : Concat((string[])values.Clone());
         }
 
-        public static string Format(string format, object arg0)
+        public static string Format(string format, object? arg0)
         {
             return FormatHelper(null, format, new ParamsArray(arg0));
         }
 
-        public static string Format(string format, object arg0, object arg1)
+        public static string Format(string format, object? arg0, object? arg1)
         {
             return FormatHelper(null, format, new ParamsArray(arg0, arg1));
         }
 
-        public static string Format(string format, object arg0, object arg1, object arg2)
+        public static string Format(string format, object? arg0, object? arg1, object? arg2)
         {
             return FormatHelper(null, format, new ParamsArray(arg0, arg1, arg2));
         }
@@ -500,22 +500,22 @@ namespace System
             return FormatHelper(null, format, new ParamsArray(args));
         }
 
-        public static string Format(IFormatProvider provider, string format, object arg0)
+        public static string Format(IFormatProvider? provider, string format, object? arg0)
         {
             return FormatHelper(provider, format, new ParamsArray(arg0));
         }
 
-        public static string Format(IFormatProvider provider, string format, object arg0, object arg1)
+        public static string Format(IFormatProvider? provider, string format, object? arg0, object? arg1)
         {
             return FormatHelper(provider, format, new ParamsArray(arg0, arg1));
         }
 
-        public static string Format(IFormatProvider provider, string format, object arg0, object arg1, object arg2)
+        public static string Format(IFormatProvider? provider, string format, object? arg0, object? arg1, object? arg2)
         {
             return FormatHelper(provider, format, new ParamsArray(arg0, arg1, arg2));
         }
 
-        public static string Format(IFormatProvider provider, string format, params object[] args)
+        public static string Format(IFormatProvider? provider, string format, params object[] args)
         {
             if (args == null)
             {
@@ -527,7 +527,7 @@ namespace System
             return FormatHelper(provider, format, new ParamsArray(args));
         }
 
-        private static string FormatHelper(IFormatProvider provider, string format, ParamsArray args)
+        private static string FormatHelper(IFormatProvider? provider, string format, ParamsArray args)
         {
             if (format == null)
                 throw new ArgumentNullException(nameof(format));
@@ -604,7 +604,7 @@ namespace System
 
         // Joins an array of strings together as one string with a separator between each original string.
         //
-        public static string Join(string separator, params string[] value)
+        public static string Join(string? separator, params string[] value)
         {
             if (value == null)
             {
@@ -613,7 +613,7 @@ namespace System
             return Join(separator, value, 0, value.Length);
         }
 
-        public static unsafe string Join(string separator, params object[] values)
+        public static unsafe string Join(string? separator, params object[] values)
         {
             separator = separator ?? string.Empty;
             fixed (char* pSeparator = &separator._firstChar)
@@ -623,7 +623,7 @@ namespace System
             }
         }
 
-        public static unsafe string Join<T>(string separator, IEnumerable<T> values)
+        public static unsafe string Join<T>(string? separator, IEnumerable<T> values)
         {
             separator = separator ?? string.Empty;
             fixed (char* pSeparator = &separator._firstChar)
@@ -633,7 +633,7 @@ namespace System
             }
         }
 
-        public static string Join(string separator, IEnumerable<string> values)
+        public static string Join(string? separator, IEnumerable<string> values)
         {
             if (values == null)
             {
@@ -672,7 +672,7 @@ namespace System
 
         // Joins an array of strings together as one string with a separator between each original string.
         //
-        public static unsafe string Join(string separator, string[] value, int startIndex, int count)
+        public static unsafe string Join(string? separator, string[] value, int startIndex, int count)
         {
             separator = separator ?? string.Empty;
             fixed (char* pSeparator = &separator._firstChar)
@@ -973,12 +973,12 @@ namespace System
             return Substring(0, startIndex);
         }
 
-        public string Replace(string oldValue, string newValue, bool ignoreCase, CultureInfo culture)
+        public string Replace(string oldValue, string? newValue, bool ignoreCase, CultureInfo? culture)
         {
             return ReplaceCore(oldValue, newValue, culture, ignoreCase ? CompareOptions.IgnoreCase : CompareOptions.None);
         }
 
-        public string Replace(string oldValue, string newValue, StringComparison comparisonType)
+        public string Replace(string oldValue, string? newValue, StringComparison comparisonType)
         {
             switch (comparisonType)
             {
@@ -1001,7 +1001,7 @@ namespace System
             }
         }
 
-        private unsafe string ReplaceCore(string oldValue, string newValue, CultureInfo culture, CompareOptions options)
+        private unsafe string ReplaceCore(string oldValue, string? newValue, CultureInfo? culture, CompareOptions options)
         {
             if (oldValue == null)
                 throw new ArgumentNullException(nameof(oldValue));
@@ -1121,7 +1121,7 @@ namespace System
             }
         }
 
-        public string Replace(string oldValue, string newValue)
+        public string Replace(string oldValue, string? newValue)
         {
             if (oldValue == null)
                 throw new ArgumentNullException(nameof(oldValue));
@@ -1174,7 +1174,7 @@ namespace System
             return dst;
         }
 
-        private string ReplaceHelper(int oldValueLength, string newValue, ReadOnlySpan<int> indices)
+        private string ReplaceHelper(int oldValueLength, string? newValue, ReadOnlySpan<int> indices)
         {
             Debug.Assert(indices.Length > 0);
 
@@ -1305,27 +1305,27 @@ namespace System
             return result;
         }
 
-        public string[] Split(string separator, StringSplitOptions options = StringSplitOptions.None)
+        public string[] Split(string? separator, StringSplitOptions options = StringSplitOptions.None)
         {
             return SplitInternal(separator ?? string.Empty, null, int.MaxValue, options);
         }
 
-        public string[] Split(string separator, int count, StringSplitOptions options = StringSplitOptions.None)
+        public string[] Split(string? separator, int count, StringSplitOptions options = StringSplitOptions.None)
         {
             return SplitInternal(separator ?? string.Empty, null, count, options);
         }
 
-        public string[] Split(string[] separator, StringSplitOptions options)
+        public string[] Split(string[]? separator, StringSplitOptions options)
         {
             return SplitInternal(null, separator, int.MaxValue, options);
         }
 
-        public string[] Split(string[] separator, int count, StringSplitOptions options)
+        public string[] Split(string[]? separator, int count, StringSplitOptions options)
         {
             return SplitInternal(null, separator, count, options);
         }
 
-        private string[] SplitInternal(string separator, string[] separators, int count, StringSplitOptions options)
+        private string[] SplitInternal(string? separator, string[]? separators, int count, StringSplitOptions options)
         {
             if (count < 0)
             {
@@ -1388,7 +1388,7 @@ namespace System
             return result;
         }
 
-        private string[] SplitInternal(string separator, int count, StringSplitOptions options)
+        private string[] SplitInternal(string? separator, int count, StringSplitOptions options)
         {
             Span<int> sepListInitialSpan = stackalloc int[StackallocIntBufferSizeLimit];
             var sepListBuilder = new ValueListBuilder<int>(sepListInitialSpan);
@@ -1590,7 +1590,7 @@ namespace System
         /// <param name="separator">separator string</param>
         /// <param name="sepListBuilder"><see cref="ValueListBuilder{T}"/> to store indexes</param>
         /// <returns></returns>
-        private void MakeSeparatorList(string separator, ref ValueListBuilder<int> sepListBuilder)
+        private void MakeSeparatorList(string? separator, ref ValueListBuilder<int> sepListBuilder)
         {
             Debug.Assert(!IsNullOrEmpty(separator), "!string.IsNullOrEmpty(separator)");
 
@@ -1768,7 +1768,7 @@ namespace System
         public unsafe string Trim(char trimChar) => TrimHelper(&trimChar, 1, TrimType.Both);
 
         // Removes a set of characters from the beginning and end of this string.
-        public unsafe string Trim(params char[] trimChars)
+        public unsafe string Trim(params char[]? trimChars)
         {
             if (trimChars == null || trimChars.Length == 0)
             {
@@ -1787,7 +1787,7 @@ namespace System
         public unsafe string TrimStart(char trimChar) => TrimHelper(&trimChar, 1, TrimType.Head);
 
         // Removes a set of characters from the beginning of this string.
-        public unsafe string TrimStart(params char[] trimChars)
+        public unsafe string TrimStart(params char[]? trimChars)
         {
             if (trimChars == null || trimChars.Length == 0)
             {
@@ -1806,7 +1806,7 @@ namespace System
         public unsafe string TrimEnd(char trimChar) => TrimHelper(&trimChar, 1, TrimType.Tail);
 
         // Removes a set of characters from the end of this string.
-        public unsafe string TrimEnd(params char[] trimChars)
+        public unsafe string TrimEnd(params char[]? trimChars)
         {
             if (trimChars == null || trimChars.Length == 0)
             {
