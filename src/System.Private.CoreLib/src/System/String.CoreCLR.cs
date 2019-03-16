@@ -89,7 +89,7 @@ namespace System
             return str.Intern();
         }
 
-        public static string IsInterned(string str)
+        public static string? IsInterned(string str)
         {
             if (str == null)
             {

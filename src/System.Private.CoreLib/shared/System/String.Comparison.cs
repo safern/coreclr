@@ -178,7 +178,7 @@ namespace System
         // to determine whether it is lexicographically less, equal, or greater, and then returns
         // either a negative integer, 0, or a positive integer; respectively.
         //
-        public static int Compare(string strA, string strB)
+        public static int Compare(string? strA, string? strB)
         {
             return Compare(strA, strB, StringComparison.CurrentCulture);
         }
@@ -189,7 +189,7 @@ namespace System
         // negative integer, 0, or a positive integer is returned; respectively.
         // The case-sensitive option is set by ignoreCase
         //
-        public static int Compare(string strA, string strB, bool ignoreCase)
+        public static int Compare(string? strA, string? strB, bool ignoreCase)
         {
             var comparisonType = ignoreCase ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture;
             return Compare(strA, strB, comparisonType);
@@ -198,7 +198,7 @@ namespace System
 
         // Provides a more flexible function for string comparison. See StringComparison 
         // for meaning of different comparisonType.
-        public static int Compare(string strA, string strB, StringComparison comparisonType)
+        public static int Compare(string? strA, string? strB, StringComparison comparisonType)
         {
             if (object.ReferenceEquals(strA, strB))
             {
@@ -251,7 +251,7 @@ namespace System
         // to determine whether it is lexicographically less, equal, or greater, and then a
         // negative integer, 0, or a positive integer is returned; respectively.
         //
-        public static int Compare(string strA, string strB, CultureInfo culture, CompareOptions options)
+        public static int Compare(string? strA, string? strB, CultureInfo culture, CompareOptions options)
         {
             if (culture == null)
             {
@@ -269,7 +269,7 @@ namespace System
         // The case-sensitive option is set by ignoreCase, and the culture is set
         // by culture
         //
-        public static int Compare(string strA, string strB, bool ignoreCase, CultureInfo culture)
+        public static int Compare(string? strA, string? strB, bool ignoreCase, CultureInfo culture)
         {
             var options = ignoreCase ? CompareOptions.IgnoreCase : CompareOptions.None;
             return Compare(strA, strB, culture, options);
@@ -328,7 +328,7 @@ namespace System
         // beginning at indexB of the same length.  Case sensitivity is determined by the ignoreCase boolean,
         // and the culture is set by culture.
         //
-        public static int Compare(string strA, int indexA, string strB, int indexB, int length, bool ignoreCase, CultureInfo culture)
+        public static int Compare(string? strA, int indexA, string? strB, int indexB, int length, bool ignoreCase, CultureInfo culture)
         {
             var options = ignoreCase ? CompareOptions.IgnoreCase : CompareOptions.None;
             return Compare(strA, indexA, strB, indexB, length, culture, options);
@@ -339,7 +339,7 @@ namespace System
         // at indexA of length length is compared with the substring of strB
         // beginning at indexB of the same length.
         //
-        public static int Compare(string strA, int indexA, string strB, int indexB, int length, CultureInfo culture, CompareOptions options)
+        public static int Compare(string? strA, int indexA, string? strB, int indexB, int length, CultureInfo culture, CompareOptions options)
         {
             if (culture == null)
             {
@@ -424,7 +424,7 @@ namespace System
 
         // Compares strA and strB using an ordinal (code-point) comparison.
         //
-        public static int CompareOrdinal(string strA, string strB)
+        public static int CompareOrdinal(string? strA, string? strB)
         {
             if (object.ReferenceEquals(strA, strB))
             {
@@ -578,7 +578,7 @@ namespace System
             }
         }
 
-        public bool EndsWith(string value, bool ignoreCase, CultureInfo culture)
+        public bool EndsWith(string value, bool ignoreCase, CultureInfo? culture)
         {
             if (null == value)
             {
@@ -616,7 +616,7 @@ namespace System
         }
 
         // Determines whether two strings match.
-        public bool Equals(string value)
+        public bool Equals(string? value)
         {
             if (object.ReferenceEquals(this, value))
                 return true;
@@ -634,7 +634,7 @@ namespace System
             return EqualsHelper(this, value);
         }
 
-        public bool Equals(string value, StringComparison comparisonType)
+        public bool Equals(string? value, StringComparison comparisonType)
         {
             if ((object)this == (object)value)
             {
@@ -676,7 +676,7 @@ namespace System
 
 
         // Determines whether two Strings match.
-        public static bool Equals(string a, string b)
+        public static bool Equals(string? a, string? b)
         {
             if ((object)a == (object)b)
             {
@@ -691,7 +691,7 @@ namespace System
             return EqualsHelper(a, b);
         }
 
-        public static bool Equals(string a, string b, StringComparison comparisonType)
+        public static bool Equals(string? a, string? b, StringComparison comparisonType)
         {
             if ((object)a == (object)b)
             {
@@ -900,7 +900,7 @@ namespace System
             }
         }
 
-        public bool StartsWith(string value, bool ignoreCase, CultureInfo culture)
+        public bool StartsWith(string value, bool ignoreCase, CultureInfo? culture)
         {
             if (null == value)
             {

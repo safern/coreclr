@@ -433,7 +433,7 @@ namespace System
         }
 
         [NonVersionable]
-        public static bool IsNullOrEmpty(string value)
+        public static bool IsNullOrEmpty(string? value)
         {
             // Using 0u >= (uint)value.Length rather than
             // value.Length == 0 as it will elide the bounds check to
@@ -457,7 +457,7 @@ namespace System
         [System.Runtime.CompilerServices.IndexerName("Chars")]
         public string this[Range range] => Substring(range);
 
-        public static bool IsNullOrWhiteSpace(string value)
+        public static bool IsNullOrWhiteSpace(string? value)
         {
             if (value == null) return true;
 
@@ -762,7 +762,7 @@ namespace System
             return Convert.ToDateTime(this, provider);
         }
 
-        object IConvertible.ToType(Type type, IFormatProvider provider)
+        object IConvertible.ToType(Type type, IFormatProvider? provider)
         {
             return Convert.DefaultToType((IConvertible)this, type, provider);
         }
