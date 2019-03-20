@@ -475,7 +475,7 @@ namespace System
         // Helper for encodings so they can talk to our buffer directly
         // stringLength must be the exact size we'll expect
         internal static unsafe string CreateStringFromEncoding(
-            byte* bytes, int byteLength, Encoding? encoding)
+            byte* bytes, int byteLength, Encoding encoding)
         {
             Debug.Assert(bytes != null);
             Debug.Assert(byteLength >= 0);
@@ -763,7 +763,7 @@ namespace System
             return Convert.ToDateTime(this, provider);
         }
 
-        object IConvertible.ToType(Type? type, IFormatProvider? provider)
+        object IConvertible.ToType(Type type, IFormatProvider? provider)
         {
             return Convert.DefaultToType((IConvertible)this, type, provider);
         }

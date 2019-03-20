@@ -78,7 +78,7 @@ namespace System
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern string Intern();
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern string IsInterned();
+        private extern string? IsInterned();
 
         public static string Intern(string str)
         {
@@ -90,7 +90,7 @@ namespace System
             return str.Intern();
         }
 
-        public static string IsInterned(string str)
+        public static string? IsInterned(string str)
         {
             if (str == null)
             {
@@ -101,7 +101,7 @@ namespace System
         }
 
         // Copies the source String (byte buffer) to the destination IntPtr memory allocated with len bytes.
-        internal static unsafe void InternalCopy(string? src, IntPtr dest, int len)
+        internal static unsafe void InternalCopy(string src, IntPtr dest, int len)
         {
             if (len == 0)
                 return;
@@ -113,7 +113,7 @@ namespace System
             }
         }
 
-        internal unsafe int GetBytesFromEncoding(byte* pbNativeBuffer, int cbNativeBuffer, Encoding? encoding)
+        internal unsafe int GetBytesFromEncoding(byte* pbNativeBuffer, int cbNativeBuffer, Encoding encoding)
         {
             // encoding == Encoding.UTF8
             fixed (char* pwzChar = &_firstChar)

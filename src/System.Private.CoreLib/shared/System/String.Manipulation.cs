@@ -196,7 +196,7 @@ namespace System
                     // Everything should be called in the order
                     // MoveNext-Current-ToString, unless further optimizations
                     // can be made, to avoid breaking changes
-                    string firstString = currentValue?.ToString();
+                    string? firstString = currentValue?.ToString();
 
                     // If there's only 1 item, simply call ToString on that
                     if (!en.MoveNext())
@@ -740,7 +740,7 @@ namespace System
                 // Everything should be called in the order
                 // MoveNext-Current-ToString, unless further optimizations
                 // can be made, to avoid breaking changes
-                string firstString = currentValue?.ToString();
+                string? firstString = currentValue?.ToString();
 
                 // If there's only 1 item, simply call ToString on that
                 if (!en.MoveNext())
@@ -1175,7 +1175,7 @@ namespace System
             return dst;
         }
 
-        private string ReplaceHelper(int oldValueLength, string? newValue, ReadOnlySpan<int> indices)
+        private string ReplaceHelper(int oldValueLength, string newValue, ReadOnlySpan<int> indices)
         {
             Debug.Assert(indices.Length > 0);
 
@@ -1233,7 +1233,7 @@ namespace System
         // If the separator is null
         // whitespace (i.e., Character.IsWhitespace) is used as the separator.
         //
-        public string[] Split(params char[] separator)
+        public string[] Split(params char[]? separator)
         {
             return SplitInternal(separator, int.MaxValue, StringSplitOptions.None);
         }
@@ -1249,17 +1249,17 @@ namespace System
         // If there are more than count different strings, the last n-(count-1)
         // elements are concatenated and added as the last string.
         //
-        public string[] Split(char[] separator, int count)
+        public string[] Split(char[]? separator, int count)
         {
             return SplitInternal(separator, count, StringSplitOptions.None);
         }
 
-        public string[] Split(char[] separator, StringSplitOptions options)
+        public string[] Split(char[]? separator, StringSplitOptions options)
         {
             return SplitInternal(separator, int.MaxValue, options);
         }
 
-        public string[] Split(char[] separator, int count, StringSplitOptions options)
+        public string[] Split(char[]? separator, int count, StringSplitOptions options)
         {
             return SplitInternal(separator, count, options);
         }
@@ -1341,11 +1341,9 @@ namespace System
 
             bool omitEmptyEntries = (options == StringSplitOptions.RemoveEmptyEntries);
 
-            bool singleSeparator = separator != null;
-
-            if (!singleSeparator && (separators == null || separators.Length == 0))
+            if (separator == null && (separators == null || separators.Length == 0))
             {
-                return SplitInternal((char[])null, count, options);
+                return SplitInternal((ReadOnlySpan<char>)null, count, options);
             }
 
             if ((count == 0) || (omitEmptyEntries && Length == 0))
@@ -1353,12 +1351,12 @@ namespace System
                 return Array.Empty<string>();
             }
 
-            if (count == 1 || (singleSeparator && separator.Length == 0))
+            if (count == 1 || (separator != null && separator.Length == 0))
             {
                 return new string[] { this };
             }
 
-            if (singleSeparator)
+            if (separator != null)
             {
                 return SplitInternal(separator, count, options);
             }
@@ -1369,7 +1367,7 @@ namespace System
             Span<int> lengthListInitialSpan = stackalloc int[StackallocIntBufferSizeLimit];
             var lengthListBuilder = new ValueListBuilder<int>(lengthListInitialSpan);
 
-            MakeSeparatorList(separators, ref sepListBuilder, ref lengthListBuilder);
+            MakeSeparatorList(separators!, ref sepListBuilder, ref lengthListBuilder);
             ReadOnlySpan<int> sepList = sepListBuilder.AsSpan();
             ReadOnlySpan<int> lengthList = lengthListBuilder.AsSpan();
 
@@ -1389,7 +1387,7 @@ namespace System
             return result;
         }
 
-        private string[] SplitInternal(string? separator, int count, StringSplitOptions options)
+        private string[] SplitInternal(string separator, int count, StringSplitOptions options)
         {
             Span<int> sepListInitialSpan = stackalloc int[StackallocIntBufferSizeLimit];
             var sepListBuilder = new ValueListBuilder<int>(sepListInitialSpan);
@@ -1591,7 +1589,7 @@ namespace System
         /// <param name="separator">separator string</param>
         /// <param name="sepListBuilder"><see cref="ValueListBuilder{T}"/> to store indexes</param>
         /// <returns></returns>
-        private void MakeSeparatorList(string? separator, ref ValueListBuilder<int> sepListBuilder)
+        private void MakeSeparatorList(string separator, ref ValueListBuilder<int> sepListBuilder)
         {
             Debug.Assert(!IsNullOrEmpty(separator), "!string.IsNullOrEmpty(separator)");
 

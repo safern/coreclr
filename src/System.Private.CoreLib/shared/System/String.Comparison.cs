@@ -50,7 +50,7 @@ namespace System
             return SpanHelpers.SequenceCompareTo(ref Unsafe.Add(ref strA.GetRawStringData(), indexA), countA, ref Unsafe.Add(ref strB.GetRawStringData(), indexB), countB);
         }
 
-        private static bool EqualsOrdinalIgnoreCase(string? strA, string? strB)
+        private static bool EqualsOrdinalIgnoreCase(string strA, string strB)
         {
             Debug.Assert(strA.Length == strB.Length);
 
@@ -679,12 +679,12 @@ namespace System
         // Determines whether two Strings match.
         public static bool Equals(string? a, string? b)
         {
-            if ((object)a == (object)b)
+            if ((object?)a == (object?)b)
             {
                 return true;
             }
 
-            if ((object)a == null || (object)b == null || a.Length != b.Length)
+            if ((object?)a == null || (object?)b == null || a.Length != b.Length)
             {
                 return false;
             }
@@ -694,13 +694,13 @@ namespace System
 
         public static bool Equals(string? a, string? b, StringComparison comparisonType)
         {
-            if ((object)a == (object)b)
+            if ((object?)a == (object?)b)
             {
                 CheckStringComparison(comparisonType);
                 return true;
             }
 
-            if ((object)a == null || (object)b == null)
+            if ((object?)a == null || (object?)b == null)
             {
                 CheckStringComparison(comparisonType);
                 return false;
