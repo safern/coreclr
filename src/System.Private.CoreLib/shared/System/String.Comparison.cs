@@ -637,13 +637,13 @@ namespace System
 
         public bool Equals(string? value, StringComparison comparisonType)
         {
-            if ((object)this == (object)value)
+            if ((object)this == (object?)value)
             {
                 CheckStringComparison(comparisonType);
                 return true;
             }
 
-            if ((object)value == null)
+            if ((object?)value == null)
             {
                 CheckStringComparison(comparisonType);
                 return false;
@@ -679,12 +679,12 @@ namespace System
         // Determines whether two Strings match.
         public static bool Equals(string? a, string? b)
         {
-            if ((object)a == (object)b)
+            if ((object?)a == (object?)b)
             {
                 return true;
             }
 
-            if ((object)a == null || (object)b == null || a.Length != b.Length)
+            if ((object?)a == null || (object?)b == null || a.Length != b.Length)
             {
                 return false;
             }
@@ -694,13 +694,13 @@ namespace System
 
         public static bool Equals(string? a, string? b, StringComparison comparisonType)
         {
-            if ((object)a == (object)b)
+            if ((object?)a == (object?)b)
             {
                 CheckStringComparison(comparisonType);
                 return true;
             }
 
-            if ((object)a == null || (object)b == null)
+            if ((object?)a == null || (object?)b == null)
             {
                 CheckStringComparison(comparisonType);
                 return false;
