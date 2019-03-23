@@ -80,7 +80,7 @@ namespace System
                 return __reftype(this).GetHashCode();
         }
 
-        public override bool Equals(object o)
+        public override bool Equals(object? o)
         {
             throw new NotSupportedException(SR.NotSupported_NYI);
         }

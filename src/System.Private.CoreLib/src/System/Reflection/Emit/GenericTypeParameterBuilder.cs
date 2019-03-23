@@ -36,7 +36,7 @@ namespace System.Reflection.Emit
         {
             return m_type.Name;
         }
-        public override bool Equals(object o)
+        public override bool Equals(object? o)
         {
             GenericTypeParameterBuilder g = o as GenericTypeParameterBuilder;
 

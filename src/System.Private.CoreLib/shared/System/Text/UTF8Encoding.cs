@@ -2553,7 +2553,7 @@ namespace System.Text
             _emitUTF8Identifier ? PreambleSpan :
             default;
 
-        public override bool Equals(object value)
+        public override bool Equals(object? value)
         {
             if (value is UTF8Encoding that)
             {

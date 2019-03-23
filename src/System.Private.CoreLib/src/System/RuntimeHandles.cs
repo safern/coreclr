@@ -84,7 +84,7 @@ namespace System
             return m_type != null ? m_type.GetHashCode() : 0;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!(obj is RuntimeTypeHandle))
                 return false;
@@ -755,7 +755,7 @@ namespace System
             return ValueType.GetHashCodeOfPtr(Value);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!(obj is RuntimeMethodHandle))
                 return false;
@@ -1093,7 +1093,7 @@ namespace System
             return ValueType.GetHashCodeOfPtr(Value);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!(obj is RuntimeFieldHandle))
                 return false;
@@ -1205,7 +1205,7 @@ namespace System
             return m_ptr != null ? m_ptr.GetHashCode() : 0;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!(obj is ModuleHandle))
                 return false;

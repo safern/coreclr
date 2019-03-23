@@ -296,7 +296,7 @@ namespace System.Threading
         /// from public CancellationToken constructors and their <see cref="IsCancellationRequested"/> values are equal.</returns>
         /// <exception cref="T:System.ObjectDisposedException">An associated <see
         /// cref="T:System.Threading.CancellationTokenSource">CancellationTokenSource</see> has been disposed.</exception>
-        public override bool Equals(object other) => other is CancellationToken && Equals((CancellationToken)other);
+        public override bool Equals(object? other) => other is CancellationToken && Equals((CancellationToken)other);
 
         /// <summary>
         /// Serves as a hash function for a <see cref="T:System.Threading.CancellationToken">CancellationToken</see>.

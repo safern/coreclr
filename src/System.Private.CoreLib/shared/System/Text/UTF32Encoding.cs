@@ -1157,7 +1157,7 @@ namespace System.Text
             _bigEndian ? (ReadOnlySpan<byte>)new byte[4] { 0x00, 0x00, 0xFE, 0xFF } : // uses C# compiler's optimization for static byte[] data
             (ReadOnlySpan<byte>)new byte[4] { 0xFF, 0xFE, 0x00, 0x00 };      
 
-        public override bool Equals(object value)
+        public override bool Equals(object? value)
         {
             if (value is UTF32Encoding that)
             {

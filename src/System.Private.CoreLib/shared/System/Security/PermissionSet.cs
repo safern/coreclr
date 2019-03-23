@@ -30,7 +30,7 @@ namespace System.Security
         public void Demand() { }
         [Obsolete]
         public void Deny() { throw new PlatformNotSupportedException(SR.PlatformNotSupported_CAS); }
-        public override bool Equals(object o) => base.Equals(o);
+        public override bool Equals(object? o) => base.Equals(o);
         public virtual void FromXml(SecurityElement et) { }
         public IEnumerator GetEnumerator() { return GetEnumeratorImpl(); }
         protected virtual IEnumerator GetEnumeratorImpl() { return Array.Empty<object>().GetEnumerator(); }

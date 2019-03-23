@@ -16,7 +16,7 @@ namespace System.Reflection.Emit
 
         private InternalModuleBuilder() { }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj == null)
             {
@@ -485,7 +485,7 @@ namespace System.Reflection.Emit
 
         #endregion
 
-        public override bool Equals(object obj) => InternalModule.Equals(obj);
+        public override bool Equals(object? obj) => InternalModule.Equals(obj);
 
         // Need a dummy GetHashCode to pair with Equals
         public override int GetHashCode() => InternalModule.GetHashCode();

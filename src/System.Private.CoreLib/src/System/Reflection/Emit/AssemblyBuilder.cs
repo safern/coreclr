@@ -51,7 +51,7 @@ namespace System.Reflection.Emit
     {
         private InternalAssemblyBuilder() { }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj == null)
             {
@@ -411,7 +411,7 @@ namespace System.Reflection.Emit
             }
         }
 
-        public override bool Equals(object obj) => InternalAssembly.Equals(obj);
+        public override bool Equals(object? obj) => InternalAssembly.Equals(obj);
 
         // Need a dummy GetHashCode to pair with Equals
         public override int GetHashCode() => InternalAssembly.GetHashCode();

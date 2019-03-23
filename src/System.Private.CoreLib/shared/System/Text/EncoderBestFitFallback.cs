@@ -38,7 +38,7 @@ namespace System.Text
             }
         }
 
-        public override bool Equals(object value)
+        public override bool Equals(object? value)
         {
             if (value is InternalEncoderBestFitFallback that)
             {

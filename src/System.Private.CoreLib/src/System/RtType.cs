@@ -4214,7 +4214,7 @@ namespace System
 
         #region Object Overrides
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             // ComObjects are identified by the instance of the Type object and not the TypeHandle.
             return obj == (object)this;

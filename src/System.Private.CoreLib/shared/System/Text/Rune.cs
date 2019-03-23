@@ -671,7 +671,7 @@ namespace System.Text
             return charsWritten;
         }
 
-        public override bool Equals(object obj) => (obj is Rune other) && this.Equals(other);
+        public override bool Equals(object? obj) => (obj is Rune other) && this.Equals(other);
 
         public bool Equals(Rune other) => (this == other);
 

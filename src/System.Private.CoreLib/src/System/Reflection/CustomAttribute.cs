@@ -436,7 +436,7 @@ namespace System.Reflection
             return string.Format("[{0}({1}{2})]", Constructor.DeclaringType.FullName, ctorArgs, namedArgs);
         }
         public override int GetHashCode() => base.GetHashCode();
-        public override bool Equals(object obj) => obj == (object)this;
+        public override bool Equals(object? obj) => obj == (object)this;
         #endregion
 
         #region Public Members
@@ -554,7 +554,7 @@ namespace System.Reflection
         {
             return base.GetHashCode();
         }
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj == (object)this;
         }
@@ -841,7 +841,7 @@ namespace System.Reflection
         }
 
         public override int GetHashCode() => base.GetHashCode();
-        public override bool Equals(object obj) => obj == (object)this;
+        public override bool Equals(object? obj) => obj == (object)this;
 
         public Type ArgumentType => m_argumentType;
         public object Value => m_value;

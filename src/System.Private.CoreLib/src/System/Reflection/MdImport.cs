@@ -262,7 +262,7 @@ namespace System.Reflection
             return ValueType.GetHashCodeOfPtr(m_metadataImport2);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!(obj is MetadataImport))
                 return false;

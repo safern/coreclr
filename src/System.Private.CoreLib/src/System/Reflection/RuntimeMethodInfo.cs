@@ -207,7 +207,7 @@ namespace System.Reflection
                 return base.GetHashCode();
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!IsGenericMethod)
                 return obj == (object)this;

@@ -117,7 +117,7 @@ namespace System.Threading.Tasks
         public override int GetHashCode() => _obj?.GetHashCode() ?? 0;
 
         /// <summary>Returns a value indicating whether this value is equal to a specified <see cref="object"/>.</summary>
-        public override bool Equals(object obj) =>
+        public override bool Equals(object? obj) =>
             obj is ValueTask &&
             Equals((ValueTask)obj);
 
@@ -494,7 +494,7 @@ namespace System.Threading.Tasks
             0;
 
         /// <summary>Returns a value indicating whether this value is equal to a specified <see cref="object"/>.</summary>
-        public override bool Equals(object obj) =>
+        public override bool Equals(object? obj) =>
             obj is ValueTask<TResult> &&
             Equals((ValueTask<TResult>)obj);
 

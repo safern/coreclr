@@ -54,7 +54,7 @@ namespace System
 
         // equals returns true IIF the delegate is not null and has the
         //    same target, method and invocation list as this object
-        public override sealed bool Equals(object obj)
+        public override sealed bool Equals(object? obj)
         {
             if (obj == null)
                 return false;

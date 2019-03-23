@@ -99,7 +99,7 @@ namespace System.Runtime.InteropServices.WindowsRuntime
         [MethodImpl(MethodImplOptions.InternalCall)]
         internal extern bool RedirectEquals(object obj, IntPtr pMD);
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             IntPtr pMD = GetRedirectedEqualsMD();
             if (pMD == IntPtr.Zero)

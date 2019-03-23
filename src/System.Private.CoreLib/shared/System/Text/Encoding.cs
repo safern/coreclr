@@ -1154,7 +1154,7 @@ namespace System.Text
 
         private static Encoding BigEndianUTF32 => UTF32Encoding.s_bigEndianDefault;
 
-        public override bool Equals(object value)
+        public override bool Equals(object? value)
         {
             if (value is Encoding that)
                 return (_codePage == that._codePage) &&

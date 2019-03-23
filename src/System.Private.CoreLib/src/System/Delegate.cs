@@ -109,7 +109,7 @@ namespace System
         }
 
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj == null || !InternalEqualTypes(this, obj))
                 return false;

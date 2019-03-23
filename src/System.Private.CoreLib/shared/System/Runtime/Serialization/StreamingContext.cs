@@ -19,7 +19,7 @@ namespace System.Runtime.Serialization
             _additionalContext = additional;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!(obj is StreamingContext))
             {

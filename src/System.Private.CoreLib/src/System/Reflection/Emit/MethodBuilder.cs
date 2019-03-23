@@ -465,7 +465,7 @@ namespace System.Reflection.Emit
         #endregion
 
         #region Object Overrides
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!(obj is MethodBuilder))
             {
@@ -1166,7 +1166,7 @@ namespace System.Reflection.Emit
             return m_exceptionClass ^ m_tryStartOffset ^ m_tryEndOffset ^ m_filterOffset ^ m_handlerStartOffset ^ m_handlerEndOffset ^ (int)m_kind;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is ExceptionHandler && Equals((ExceptionHandler)obj);
         }
