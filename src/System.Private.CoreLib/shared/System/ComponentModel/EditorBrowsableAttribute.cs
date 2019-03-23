@@ -21,7 +21,7 @@ namespace System.ComponentModel
             get { return browsableState; }
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj == this)
             {

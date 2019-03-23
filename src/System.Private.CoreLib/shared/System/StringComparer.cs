@@ -224,7 +224,7 @@ namespace System
         }
 
         // Equals method for the comparer itself.
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return
                 obj is CultureAwareComparer comparer &&
@@ -307,7 +307,7 @@ namespace System
         }
 
         // Equals method for the comparer itself. 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!(obj is OrdinalComparer comparer))
             {

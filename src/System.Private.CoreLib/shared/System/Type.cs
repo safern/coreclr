@@ -355,7 +355,7 @@ namespace System
 
         public override string ToString() => "Type: " + Name;  // Why do we add the "Type: " prefix?
 
-        public override bool Equals(object o) => o == null ? false : Equals(o as Type);
+        public override bool Equals(object? o) => o == null ? false : Equals(o as Type);
         public override int GetHashCode()
         {
             Type systemType = UnderlyingSystemType;

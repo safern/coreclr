@@ -115,7 +115,7 @@ namespace System
             m_Item1 = item1;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return ((IStructuralEquatable)this).Equals(obj, EqualityComparer<object>.Default);
         }
@@ -214,7 +214,7 @@ namespace System
             m_Item2 = item2;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return ((IStructuralEquatable)this).Equals(obj, EqualityComparer<object>.Default); ;
         }
@@ -328,7 +328,7 @@ namespace System
             m_Item3 = item3;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return ((IStructuralEquatable)this).Equals(obj, EqualityComparer<object>.Default); ;
         }
@@ -453,7 +453,7 @@ namespace System
             m_Item4 = item4;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return ((IStructuralEquatable)this).Equals(obj, EqualityComparer<object>.Default); ;
         }
@@ -589,7 +589,7 @@ namespace System
             m_Item5 = item5;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return ((IStructuralEquatable)this).Equals(obj, EqualityComparer<object>.Default); ;
         }
@@ -736,7 +736,7 @@ namespace System
             m_Item6 = item6;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return ((IStructuralEquatable)this).Equals(obj, EqualityComparer<object>.Default); ;
         }
@@ -894,7 +894,7 @@ namespace System
             m_Item7 = item7;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return ((IStructuralEquatable)this).Equals(obj, EqualityComparer<object>.Default); ;
         }
@@ -1068,7 +1068,7 @@ namespace System
             m_Rest = rest;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return ((IStructuralEquatable)this).Equals(obj, EqualityComparer<object>.Default); ;
         }

@@ -1339,7 +1339,7 @@ namespace System.Globalization
             return CreateSortKey(source, CompareOptions.None);
         }
 
-        public override bool Equals(object value)
+        public override bool Equals(object? value)
         {
             return value is CompareInfo otherCompareInfo
                 && Name == otherCompareInfo.Name;

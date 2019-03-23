@@ -59,7 +59,7 @@ namespace System
         /// </summary>
         [Obsolete("Equals() on Span will always throw an exception. Use == instead.")]
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             throw new NotSupportedException(SR.NotSupported_CannotCallEqualsOnSpan);
         }

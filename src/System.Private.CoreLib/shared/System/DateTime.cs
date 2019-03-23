@@ -709,7 +709,7 @@ namespace System
         // is equal to the value of this DateTime. Returns false
         // otherwise.
         //
-        public override bool Equals(object value)
+        public override bool Equals(object? value)
         {
             if (value is DateTime)
             {

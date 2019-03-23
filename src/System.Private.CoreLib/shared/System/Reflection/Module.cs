@@ -113,7 +113,7 @@ namespace System.Reflection
 
         public virtual void GetObjectData(SerializationInfo info, StreamingContext context) { throw NotImplemented.ByDesign; }
 
-        public override bool Equals(object o) => base.Equals(o);
+        public override bool Equals(object? o) => base.Equals(o);
         public override int GetHashCode() => base.GetHashCode();
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

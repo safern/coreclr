@@ -519,7 +519,7 @@ namespace System
         // is equal to the value of this DateTimeOffset. Returns false
         // otherwise.
         //
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is DateTimeOffset)
             {

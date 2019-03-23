@@ -168,7 +168,7 @@ namespace System.Runtime.InteropServices
 
         public override int GetHashCode() => _handle.GetHashCode();
 
-        public override bool Equals(object o) => o is GCHandle && _handle == ((GCHandle)o)._handle;
+        public override bool Equals(object? o) => o is GCHandle && _handle == ((GCHandle)o)._handle;
 
         public static bool operator ==(GCHandle a, GCHandle b) => a._handle == b._handle;
 

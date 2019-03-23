@@ -58,7 +58,7 @@ namespace System.Collections.Generic
 
         // Equals method for the comparer itself.
         // If in the future this type is made sealed, change the is check to obj != null && GetType() == obj.GetType().
-        public override bool Equals(object obj) =>
+        public override bool Equals(object? obj) =>
             obj is GenericEqualityComparer<T>;
 
         // If in the future this type is made sealed, change typeof(...) to GetType().
@@ -87,7 +87,7 @@ namespace System.Collections.Generic
         public override int GetHashCode(T? obj) => obj.GetHashCode();
 
         // Equals method for the comparer itself.
-        public override bool Equals(object obj) =>
+        public override bool Equals(object? obj) =>
             obj != null && GetType() == obj.GetType();
 
         public override int GetHashCode() =>
@@ -115,7 +115,7 @@ namespace System.Collections.Generic
         public override int GetHashCode(T obj) => obj?.GetHashCode() ?? 0;
 
         // Equals method for the comparer itself.
-        public override bool Equals(object obj) =>
+        public override bool Equals(object? obj) =>
             obj != null && GetType() == obj.GetType();
 
         public override int GetHashCode() =>
@@ -140,7 +140,7 @@ namespace System.Collections.Generic
         }
 
         // Equals method for the comparer itself.
-        public override bool Equals(object obj) =>
+        public override bool Equals(object? obj) =>
             obj != null && GetType() == obj.GetType();
 
         public override int GetHashCode() =>
@@ -174,7 +174,7 @@ namespace System.Collections.Generic
         }
 
         // Equals method for the comparer itself.
-        public override bool Equals(object obj) =>
+        public override bool Equals(object? obj) =>
             obj != null && GetType() == obj.GetType();
 
         public override int GetHashCode() =>

@@ -379,7 +379,7 @@ namespace System
 
         /// <summary>Determines whether the specified object is equal to the current object.</summary>
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is ReadOnlyMemory<T> readOnlyMemory)
             {

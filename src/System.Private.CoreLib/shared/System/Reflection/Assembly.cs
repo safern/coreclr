@@ -155,7 +155,7 @@ namespace System.Reflection
         public virtual bool GlobalAssemblyCache { get { throw NotImplemented.ByDesign; } }
         public virtual long HostContext { get { throw NotImplemented.ByDesign; } }
 
-        public override bool Equals(object o) => base.Equals(o);
+        public override bool Equals(object? o) => base.Equals(o);
         public override int GetHashCode() => base.GetHashCode();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

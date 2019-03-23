@@ -417,7 +417,7 @@ namespace System
 
         [Obsolete("HashCode is a mutable struct and should not be compared with other HashCodes.", error: true)]
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public override bool Equals(object obj) => throw new NotSupportedException(SR.HashCode_EqualityNotSupported);
+        public override bool Equals(object? obj) => throw new NotSupportedException(SR.HashCode_EqualityNotSupported);
 #pragma warning restore 0809
     }
 }

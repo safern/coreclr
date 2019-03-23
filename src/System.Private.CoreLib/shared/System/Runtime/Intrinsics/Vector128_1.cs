@@ -145,7 +145,7 @@ namespace System.Runtime.Intrinsics
         /// <param name="obj">The object to compare with the current instance.</param>
         /// <returns><c>true</c> if <paramref name="obj" /> is a <see cref="Vector128{T}" /> and is equal to the current instance; otherwise, <c>false</c>.</returns>
         /// <exception cref="NotSupportedException">The type of the current instance (<typeparamref name="T" />) is not supported.</exception>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return (obj is Vector128<T>) && Equals((Vector128<T>)(obj));
         }

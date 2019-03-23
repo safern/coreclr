@@ -56,7 +56,7 @@ namespace System.Runtime.InteropServices
 
         public override int GetHashCode() => m_count + m_offset;
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is ArrayWithOffset && Equals((ArrayWithOffset)obj);
         }

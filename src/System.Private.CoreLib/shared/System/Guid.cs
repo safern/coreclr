@@ -806,7 +806,7 @@ namespace System
 
         // Returns true if and only if the guid represented
         //  by o is the same as this instance.
-        public override bool Equals(object o)
+        public override bool Equals(object? o)
         {
             Guid g;
             // Check that o is a Guid first

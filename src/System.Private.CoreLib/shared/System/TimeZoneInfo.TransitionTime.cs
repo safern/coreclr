@@ -30,7 +30,7 @@ namespace System
 
             public bool IsFixedDateRule => _isFixedDateRule;
 
-            public override bool Equals(object obj) =>
+            public override bool Equals(object? obj) =>
                 obj is TransitionTime && Equals((TransitionTime)obj);
 
             public static bool operator ==(TransitionTime t1, TransitionTime t2) => t1.Equals(t2);

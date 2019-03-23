@@ -42,7 +42,7 @@ namespace System.Reflection
         public virtual bool IsCollectible => true;
         public virtual int MetadataToken { get { throw new InvalidOperationException(); } }
 
-        public override bool Equals(object obj) => base.Equals(obj);
+        public override bool Equals(object? obj) => base.Equals(obj);
         public override int GetHashCode() => base.GetHashCode();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

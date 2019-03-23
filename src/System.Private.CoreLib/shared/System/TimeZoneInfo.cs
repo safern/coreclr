@@ -768,7 +768,7 @@ namespace System
             string.Equals(_id, other._id, StringComparison.OrdinalIgnoreCase) &&
             HasSameRules(other);
 
-        public override bool Equals(object obj) => Equals(obj as TimeZoneInfo);
+        public override bool Equals(object? obj) => Equals(obj as TimeZoneInfo);
 
         public static TimeZoneInfo FromSerializedString(string source)
         {

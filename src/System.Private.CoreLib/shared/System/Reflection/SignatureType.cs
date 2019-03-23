@@ -59,7 +59,7 @@ namespace System.Reflection
 
         // Identity
 #if DEBUG
-        public sealed override bool Equals(object o) => base.Equals(o);
+        public sealed override bool Equals(object? o) => base.Equals(o);
         public sealed override bool Equals(Type o) => base.Equals(o);
         public sealed override int GetHashCode() => base.GetHashCode();
 #endif

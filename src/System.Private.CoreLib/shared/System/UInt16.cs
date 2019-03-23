@@ -45,7 +45,7 @@ namespace System
             return ((int)m_value - (int)value);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (!(obj is ushort))
             {

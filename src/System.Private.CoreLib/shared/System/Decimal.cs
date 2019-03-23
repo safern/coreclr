@@ -373,7 +373,7 @@ namespace System
         // if the given object is a boxed Decimal and its value is equal to the
         // value of this Decimal. Returns false otherwise.
         //
-        public override bool Equals(object value)
+        public override bool Equals(object? value)
         {
             if (value is decimal)
             {

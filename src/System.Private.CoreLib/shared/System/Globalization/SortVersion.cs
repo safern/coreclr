@@ -39,7 +39,7 @@ namespace System.Globalization
             m_SortId = customVersion;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is SortVersion otherVersion && Equals(otherVersion);
         }

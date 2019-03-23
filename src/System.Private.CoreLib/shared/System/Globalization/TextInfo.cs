@@ -602,7 +602,7 @@ namespace System.Globalization
         /// </summary>
         public bool IsRightToLeft => _cultureData.IsRightToLeft;
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is TextInfo otherTextInfo
                 && CultureName.Equals(otherTextInfo.CultureName);

@@ -760,7 +760,7 @@ namespace System.Globalization
             }
         }
 
-        public override bool Equals(object value)
+        public override bool Equals(object? value)
         {
             if (object.ReferenceEquals(this, value))
             {

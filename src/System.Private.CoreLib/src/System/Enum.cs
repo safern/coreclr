@@ -1070,7 +1070,7 @@ namespace System
 
         #region Object Overrides
         [MethodImplAttribute(MethodImplOptions.InternalCall)]
-        public extern override bool Equals(object obj);
+        public extern override bool Equals(object? obj);
 
         public override int GetHashCode()
         {

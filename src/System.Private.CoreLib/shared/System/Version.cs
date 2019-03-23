@@ -163,7 +163,7 @@ namespace System
                 0;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return Equals(obj as Version);
         }

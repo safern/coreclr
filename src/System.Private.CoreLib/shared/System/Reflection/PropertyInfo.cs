@@ -56,7 +56,7 @@ namespace System.Reflection
         public virtual void SetValue(object obj, object value, object[] index) => SetValue(obj, value, BindingFlags.Default, binder: null, index: index, culture: null);
         public abstract void SetValue(object obj, object value, BindingFlags invokeAttr, Binder binder, object[] index, CultureInfo culture);
 
-        public override bool Equals(object obj) => base.Equals(obj);
+        public override bool Equals(object? obj) => base.Equals(obj);
         public override int GetHashCode() => base.GetHashCode();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

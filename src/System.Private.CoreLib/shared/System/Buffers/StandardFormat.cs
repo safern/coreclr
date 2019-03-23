@@ -129,7 +129,7 @@ namespace System.Buffers
         /// <summary>
         /// Returns true if both the Symbol and Precision are equal.
         /// </summary>
-        public override bool Equals(object obj) => obj is StandardFormat other && Equals(other);
+        public override bool Equals(object? obj) => obj is StandardFormat other && Equals(other);
 
         /// <summary>
         /// Compute a hash code.
