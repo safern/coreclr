@@ -43,9 +43,9 @@ namespace System
         /// <summary>
         /// Format to a string using the given culture.
         /// </summary>
-        public abstract string ToString(IFormatProvider formatProvider);
+        public abstract string ToString(IFormatProvider? formatProvider);
 
-        string IFormattable.ToString(string ignored, IFormatProvider formatProvider)
+        string IFormattable.ToString(string ignored, IFormatProvider? formatProvider)
         {
             return ToString(formatProvider);
         }

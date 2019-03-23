@@ -456,7 +456,7 @@ namespace System
         {
             return TimeSpanFormat.Format(this, format, null);
         }
-        public string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string format, IFormatProvider? formatProvider)
         {
             return TimeSpanFormat.Format(this, format, formatProvider);
         }

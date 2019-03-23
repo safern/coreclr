@@ -1023,7 +1023,7 @@ namespace System
 
         // IFormattable interface
         // We currently ignore provider
-        public string ToString(string format, IFormatProvider provider)
+        public string ToString(string format, IFormatProvider? provider)
         {
             if (string.IsNullOrEmpty(format))
             {

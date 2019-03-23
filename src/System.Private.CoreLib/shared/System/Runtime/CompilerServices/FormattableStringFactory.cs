@@ -52,7 +52,7 @@ namespace System.Runtime.CompilerServices
             public override object[] GetArguments() { return _arguments; }
             public override int ArgumentCount { get { return _arguments.Length; } }
             public override object GetArgument(int index) { return _arguments[index]; }
-            public override string ToString(IFormatProvider formatProvider) { return string.Format(formatProvider, _format, _arguments); }
+            public override string ToString(IFormatProvider? formatProvider) { return string.Format(formatProvider, _format, _arguments); }
         }
     }
 }

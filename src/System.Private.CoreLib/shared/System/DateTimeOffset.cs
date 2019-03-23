@@ -805,12 +805,12 @@ namespace System
             return DateTimeFormat.Format(ClockDateTime, format, null, Offset);
         }
 
-        public string ToString(IFormatProvider formatProvider)
+        public string ToString(IFormatProvider? formatProvider)
         {
             return DateTimeFormat.Format(ClockDateTime, null, formatProvider, Offset);
         }
 
-        public string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string format, IFormatProvider? formatProvider)
         {
             return DateTimeFormat.Format(ClockDateTime, format, formatProvider, Offset);
         }

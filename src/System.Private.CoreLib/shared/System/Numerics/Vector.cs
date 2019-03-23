@@ -1574,7 +1574,7 @@ namespace System.Numerics
         /// <param name="format">The format of individual elements.</param>
         /// <param name="formatProvider">The format provider to use when formatting elements.</param>
         /// <returns>The string representation.</returns>
-        public string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string format, IFormatProvider? formatProvider)
         {
             StringBuilder sb = new StringBuilder();
             string separator = NumberFormatInfo.GetInstance(formatProvider).NumberGroupSeparator;

@@ -36,6 +36,7 @@
     <_FullFrameworkReferenceAssemblyPaths>$(MSBuildThisFileDirectory)/Documentation</_FullFrameworkReferenceAssemblyPaths>
     <SkipCommonResourcesIncludes>true</SkipCommonResourcesIncludes>
     <DocumentationFile>$(OutputPath)$(MSBuildProjectName).xml</DocumentationFile>
+    <NullableContextOptions>enable</NullableContextOptions>
   </PropertyGroup>
 
   <!-- Approximate Arcade version string https://github.com/dotnet/arcade/blob/master/Documentation/CorePackages/Versioning.md -->

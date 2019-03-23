@@ -144,7 +144,7 @@ namespace System.Runtime.Intrinsics
         /// <param name="formatProvider">The format provider used to format the individual elements of the current instance.</param>
         /// <returns>An equivalent string representation of the current instance.</returns>
         /// <exception cref="NotSupportedException">The type of the current instance (<typeparamref name="T" />) is not supported.</exception>
-        public string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string format, IFormatProvider? formatProvider)
         {
             ThrowHelper.ThrowForUnsupportedVectorBaseType<T>();
 
