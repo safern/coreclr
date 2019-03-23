@@ -2350,7 +2350,7 @@ namespace System.Threading.Tasks
         }
 
         // A trick so we can refer to the TLS slot with a byref.
-        private void ExecuteWithThreadLocal(ref Task currentTaskSlot, Thread threadPoolThread = null)
+        private void ExecuteWithThreadLocal(ref Task currentTaskSlot, Thread? threadPoolThread = null)
         {
             // Remember the current task so we can restore it after running, and then
             Task previousTask = currentTaskSlot;

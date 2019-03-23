@@ -122,7 +122,7 @@ namespace System
         //
         // Returns a value less than zero if this  object
         //
-        public int CompareTo(object value)
+        public int CompareTo(object? value)
         {
             if (value == null)
             {

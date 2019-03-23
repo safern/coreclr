@@ -1136,7 +1136,7 @@ namespace System
         #endregion
 
         #region IComparable
-        public int CompareTo(object target)
+        public int CompareTo(object? target)
         {
             const int retIncompatibleMethodTables = 2;  // indicates that the method tables did not match
             const int retInvalidEnumType = 3; // indicates that the enum was of an unknown/unsupported underlying type

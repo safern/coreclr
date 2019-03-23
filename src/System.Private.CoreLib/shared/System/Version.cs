@@ -135,7 +135,7 @@ namespace System
             get { return (short)(_Revision & 0xFFFF); }
         }
 
-        public int CompareTo(object version)
+        public int CompareTo(object? version)
         {
             if (version == null)
             {

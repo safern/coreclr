@@ -27,7 +27,7 @@ namespace System
         // null is considered to be less than any instance.
         // If object is not of type UInt16, this method throws an ArgumentException.
         // 
-        public int CompareTo(object value)
+        public int CompareTo(object? value)
         {
             if (value == null)
             {

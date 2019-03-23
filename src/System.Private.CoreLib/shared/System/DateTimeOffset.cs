@@ -489,7 +489,7 @@ namespace System
         // argument must be another DateTimeOffset, or otherwise an exception
         // occurs.  Null is considered less than any instance.
         //
-        int IComparable.CompareTo(object obj)
+        int IComparable.CompareTo(object? obj)
         {
             if (obj == null) return 1;
             if (!(obj is DateTimeOffset))

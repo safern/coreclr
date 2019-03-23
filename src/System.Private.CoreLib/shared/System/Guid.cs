@@ -832,7 +832,7 @@ namespace System
 
         private int GetResult(uint me, uint them) => me < them ? -1 : 1;
 
-        public int CompareTo(object value)
+        public int CompareTo(object? value)
         {
             if (value == null)
             {

@@ -56,7 +56,7 @@ namespace System
             return other is ValueTuple;
         }
 
-        int IComparable.CompareTo(object other)
+        int IComparable.CompareTo(object? other)
         {
             if (other == null) return 1;
 
@@ -359,7 +359,7 @@ namespace System
             return comparer.Equals(Item1, objTuple.Item1);
         }
 
-        int IComparable.CompareTo(object other)
+        int IComparable.CompareTo(object? other)
         {
             if (other == null) return 1;
 
@@ -553,7 +553,7 @@ namespace System
                 && comparer.Equals(Item2, objTuple.Item2);
         }
 
-        int IComparable.CompareTo(object other)
+        int IComparable.CompareTo(object? other)
         {
             if (other == null) return 1;
 
@@ -753,7 +753,7 @@ namespace System
                 && comparer.Equals(Item3, objTuple.Item3);
         }
 
-        int IComparable.CompareTo(object other)
+        int IComparable.CompareTo(object? other)
         {
             if (other == null) return 1;
 
@@ -970,7 +970,7 @@ namespace System
                 && comparer.Equals(Item4, objTuple.Item4);
         }
 
-        int IComparable.CompareTo(object other)
+        int IComparable.CompareTo(object? other)
         {
             if (other == null) return 1;
 
@@ -1206,7 +1206,7 @@ namespace System
                 && comparer.Equals(Item5, objTuple.Item5);
         }
 
-        int IComparable.CompareTo(object other)
+        int IComparable.CompareTo(object? other)
         {
             if (other == null) return 1;
 
@@ -1461,7 +1461,7 @@ namespace System
                 && comparer.Equals(Item6, objTuple.Item6);
         }
 
-        int IComparable.CompareTo(object other)
+        int IComparable.CompareTo(object? other)
         {
             if (other == null) return 1;
 
@@ -1735,7 +1735,7 @@ namespace System
                 && comparer.Equals(Item7, objTuple.Item7);
         }
 
-        int IComparable.CompareTo(object other)
+        int IComparable.CompareTo(object? other)
         {
             if (other == null) return 1;
 
@@ -2034,7 +2034,7 @@ namespace System
                 && comparer.Equals(Rest, objTuple.Rest);
         }
 
-        int IComparable.CompareTo(object other)
+        int IComparable.CompareTo(object? other)
         {
             if (other == null) return 1;
 

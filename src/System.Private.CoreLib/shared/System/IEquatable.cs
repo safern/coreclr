@@ -8,7 +8,7 @@ namespace System
 {
     public interface IEquatable<T>
     {
-        bool Equals(T? other);
+        bool Equals(T other);
     }
 }
 

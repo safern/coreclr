@@ -29,7 +29,7 @@ namespace System
         // null is considered to be less than any instance.
         // If object is not of type SByte, this method throws an ArgumentException.
         // 
-        public int CompareTo(object obj)
+        public int CompareTo(object? obj)
         {
             if (obj == null)
             {

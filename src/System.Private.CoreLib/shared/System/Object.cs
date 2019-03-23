@@ -44,7 +44,7 @@ namespace System
         // Equal to this.  Equality is defined as object equality for reference
         // types and bitwise equality for value types using a loader trick to
         // replace Equals with EqualsValue for value types).
-        public virtual bool Equals(object obj)
+        public virtual bool Equals(object? obj)
         {
             return RuntimeHelpers.Equals(this, obj);
         }
