@@ -436,7 +436,7 @@ namespace System
             return Number.FormatDecimal(this, format, NumberFormatInfo.GetInstance(provider));
         }
 
-        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider provider = null)
+        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = null)
         {
             return Number.TryFormatDecimal(this, format, NumberFormatInfo.GetInstance(provider), destination, out charsWritten);
         }
@@ -474,7 +474,7 @@ namespace System
             return Number.ParseDecimal(s, style, NumberFormatInfo.GetInstance(provider));
         }
 
-        public static decimal Parse(ReadOnlySpan<char> s, NumberStyles style = NumberStyles.Number, IFormatProvider provider = null)
+        public static decimal Parse(ReadOnlySpan<char> s, NumberStyles style = NumberStyles.Number, IFormatProvider? provider = null)
         {
             NumberFormatInfo.ValidateParseStyleFloatingPoint(style);
             return Number.ParseDecimal(s, style, NumberFormatInfo.GetInstance(provider));

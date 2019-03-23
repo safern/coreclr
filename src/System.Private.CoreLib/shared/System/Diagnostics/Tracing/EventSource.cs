@@ -1311,7 +1311,7 @@ namespace System.Diagnostics.Tracing
         { }
 
         // Used by the internal FrameworkEventSource constructor and the TraceLogging-style event source constructor
-        internal EventSource(Guid eventSourceGuid, string eventSourceName, EventSourceSettings settings, string[] traits = null)
+        internal EventSource(Guid eventSourceGuid, string eventSourceName, EventSourceSettings settings, string[]? traits = null)
         {
             m_config = ValidateSettings(settings);
             Initialize(eventSourceGuid, eventSourceName, traits);
@@ -2200,7 +2200,7 @@ namespace System.Diagnostics.Tracing
 
         }
         [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-        private void ThrowEventSourceException(string eventName, Exception innerEx = null)
+        private void ThrowEventSourceException(string eventName, Exception? innerEx = null)
         {
             // If we fail during out of band logging we may end up trying 
             // to throw another EventSourceException, thus hitting a StackOverflowException. 

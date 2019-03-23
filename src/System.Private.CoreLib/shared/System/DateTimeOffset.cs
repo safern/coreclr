@@ -674,7 +674,7 @@ namespace System
             return new DateTimeOffset(dateResult.Ticks, offset);
         }
 
-        public static DateTimeOffset Parse(ReadOnlySpan<char> input, IFormatProvider formatProvider = null, DateTimeStyles styles = DateTimeStyles.None)
+        public static DateTimeOffset Parse(ReadOnlySpan<char> input, IFormatProvider? formatProvider = null, DateTimeStyles styles = DateTimeStyles.None)
         {
             styles = ValidateStyles(styles, nameof(styles));
             DateTime dateResult = DateTimeParse.Parse(input, DateTimeFormatInfo.GetInstance(formatProvider), styles, out TimeSpan offset);
@@ -815,7 +815,7 @@ namespace System
             return DateTimeFormat.Format(ClockDateTime, format, formatProvider, Offset);
         }
 
-        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider formatProvider = null) =>
+        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? formatProvider = null) =>
             DateTimeFormat.TryFormat(ClockDateTime, destination, out charsWritten, format, formatProvider, Offset);
 
         public DateTimeOffset ToUniversalTime()

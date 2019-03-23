@@ -104,7 +104,7 @@ namespace System.Diagnostics.Tracing
             EventFieldTags tags,
             byte countFlags,
             ushort fixedCount = 0,
-            byte[] custom = null)
+            byte[]? custom = null)
         {
             if (name == null)
             {

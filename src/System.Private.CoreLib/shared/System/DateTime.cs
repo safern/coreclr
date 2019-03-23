@@ -1218,7 +1218,7 @@ namespace System
             return (DateTimeParse.Parse(s, DateTimeFormatInfo.GetInstance(provider), styles));
         }
 
-        public static DateTime Parse(ReadOnlySpan<char> s, IFormatProvider provider = null, DateTimeStyles styles = DateTimeStyles.None)
+        public static DateTime Parse(ReadOnlySpan<char> s, IFormatProvider? provider = null, DateTimeStyles styles = DateTimeStyles.None)
         {
             DateTimeFormatInfo.ValidateStyles(styles, nameof(styles));
             return DateTimeParse.Parse(s, DateTimeFormatInfo.GetInstance(provider), styles);
@@ -1408,7 +1408,7 @@ namespace System
             return DateTimeFormat.Format(this, format, provider);
         }
 
-        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider provider = null) =>
+        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = null) =>
             DateTimeFormat.TryFormat(this, destination, out charsWritten, format, provider);
 
         public DateTime ToUniversalTime()

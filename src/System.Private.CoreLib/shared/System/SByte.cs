@@ -96,7 +96,7 @@ namespace System
             return Number.FormatInt32(m_value, format, provider);
         }
 
-        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider provider = null)
+        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = null)
         {
             if (m_value < 0 && format.Length > 0 && (format[0] == 'X' || format[0] == 'x'))
             {
@@ -141,7 +141,7 @@ namespace System
         }
 
         [CLSCompliant(false)]
-        public static sbyte Parse(ReadOnlySpan<char> s, NumberStyles style = NumberStyles.Integer, IFormatProvider provider = null)
+        public static sbyte Parse(ReadOnlySpan<char> s, NumberStyles style = NumberStyles.Integer, IFormatProvider? provider = null)
         {
             NumberFormatInfo.ValidateParseStyleInteger(style);
             return Parse(s, style, NumberFormatInfo.GetInstance(provider));

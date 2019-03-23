@@ -330,7 +330,7 @@ namespace System.Globalization
         }
 
         /// <summary>Format the TimeSpan instance using the specified format.</summary>
-        private static StringBuilder FormatCustomized(TimeSpan value, ReadOnlySpan<char> format, DateTimeFormatInfo dtfi, StringBuilder result = null)
+        private static StringBuilder FormatCustomized(TimeSpan value, ReadOnlySpan<char> format, DateTimeFormatInfo dtfi, StringBuilder? result = null)
         {
             Debug.Assert(dtfi != null);
 

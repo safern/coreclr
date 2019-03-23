@@ -180,7 +180,7 @@ namespace System.Diagnostics.Tracing
         internal Type ParameterType;
         internal TraceLoggingTypeInfo TypeInfo;
 
-        internal void SetInfo(string name, Type type, TraceLoggingTypeInfo typeInfo = null)
+        internal void SetInfo(string name, Type type, TraceLoggingTypeInfo? typeInfo = null)
         {
             ParameterName = name;
             ParameterType = type;

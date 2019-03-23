@@ -257,7 +257,7 @@ namespace System
             return Number.FormatDouble(m_value, format, NumberFormatInfo.GetInstance(provider));
         }
 
-        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider provider = null)
+        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = null)
         {
             return Number.TryFormatDouble(m_value, format, NumberFormatInfo.GetInstance(provider), destination, out charsWritten);
         }
@@ -296,7 +296,7 @@ namespace System
         // PositiveInfinity or NegativeInfinity for a number that is too
         // large or too small.
 
-        public static double Parse(ReadOnlySpan<char> s, NumberStyles style = NumberStyles.Float | NumberStyles.AllowThousands, IFormatProvider provider = null)
+        public static double Parse(ReadOnlySpan<char> s, NumberStyles style = NumberStyles.Float | NumberStyles.AllowThousands, IFormatProvider? provider = null)
         {
             NumberFormatInfo.ValidateParseStyleFloatingPoint(style);
             return Number.ParseDouble(s, style, NumberFormatInfo.GetInstance(provider));

@@ -96,7 +96,7 @@ namespace System
             return Number.FormatInt32(m_value, format, provider);
         }
 
-        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider provider = null)
+        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = null)
         {
             return Number.TryFormatInt32(m_value, format, provider, destination, out charsWritten);
         }
@@ -135,7 +135,7 @@ namespace System
             return Number.ParseInt32(s, style, NumberFormatInfo.GetInstance(provider));
         }
 
-        public static int Parse(ReadOnlySpan<char> s, NumberStyles style = NumberStyles.Integer, IFormatProvider provider = null)
+        public static int Parse(ReadOnlySpan<char> s, NumberStyles style = NumberStyles.Integer, IFormatProvider? provider = null)
         {
             NumberFormatInfo.ValidateParseStyleInteger(style);
             return Number.ParseInt32(s, style, NumberFormatInfo.GetInstance(provider));

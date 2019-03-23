@@ -1194,7 +1194,7 @@ namespace System
             return true;
         }
 
-        bool ISpanFormattable.TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider provider)
+        bool ISpanFormattable.TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
         {
             // Like with the IFormattable implementation, provider is ignored.
             return TryFormat(destination, out charsWritten, format);

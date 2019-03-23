@@ -230,7 +230,7 @@ namespace System
             return false;
         }
 
-        bool ISpanFormattable.TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider provider)
+        bool ISpanFormattable.TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
         {
             // format and provider are ignored.
             return TryFormat(destination, out charsWritten);

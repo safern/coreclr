@@ -94,7 +94,7 @@ namespace System
             return Number.FormatUInt64(m_value, format, provider);
         }
 
-        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider provider = null)
+        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? provider = null)
         {
             return Number.TryFormatUInt64(m_value, format, provider, destination, out charsWritten);
         }
@@ -130,7 +130,7 @@ namespace System
         }
 
         [CLSCompliant(false)]
-        public static ulong Parse(ReadOnlySpan<char> s, NumberStyles style = NumberStyles.Integer, IFormatProvider provider = null)
+        public static ulong Parse(ReadOnlySpan<char> s, NumberStyles style = NumberStyles.Integer, IFormatProvider? provider = null)
         {
             NumberFormatInfo.ValidateParseStyleInteger(style);
             return Number.ParseUInt64(s, style, NumberFormatInfo.GetInstance(provider));

@@ -18,7 +18,7 @@ namespace System
         // if this is equal to object, or a value greater than zero
         // if this is greater than object.
         // 
-        int CompareTo(object obj);
+        int CompareTo(object? obj);
     }
 
     // Generic version of IComparable.
@@ -32,6 +32,6 @@ namespace System
         // if this is equal to object, or a value greater than zero
         // if this is greater than object.
         // 
-        int CompareTo(T other);
+        int CompareTo(T? other);
     }
 }
