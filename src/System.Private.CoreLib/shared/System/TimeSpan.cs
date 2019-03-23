@@ -321,7 +321,7 @@ namespace System
             if (input == null) ThrowHelper.ThrowArgumentNullException(ExceptionArgument.input);
             return TimeSpanParse.Parse(input, formatProvider);
         }
-        public static TimeSpan Parse(ReadOnlySpan<char> input, IFormatProvider formatProvider = null)
+        public static TimeSpan Parse(ReadOnlySpan<char> input, IFormatProvider? formatProvider = null)
         {
             return TimeSpanParse.Parse(input, formatProvider);
         }
@@ -461,7 +461,7 @@ namespace System
             return TimeSpanFormat.Format(this, format, formatProvider);
         }
 
-        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider formatProvider = null)
+        public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? formatProvider = null)
         {
             return TimeSpanFormat.TryFormat(this, destination, out charsWritten, format, formatProvider);
         }
