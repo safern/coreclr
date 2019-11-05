@@ -56,7 +56,7 @@ if [ "$CROSSCOMPILE" == "1" ]; then
         CONFIG_DIR="$1/cross"
     fi
     export TARGET_BUILD_ARCH=$build_arch
-    cmake_extra_defines="$cmake_extra_defines -C $CONFIG_DIR/tryrun.cmake"
+    cmake_extra_defines="$cmake_extra_defines -C $CONFIG_DIR/tryrun-coreclr.cmake"
     cmake_extra_defines="$cmake_extra_defines -DCMAKE_TOOLCHAIN_FILE=$CONFIG_DIR/toolchain.cmake"
 fi
 
